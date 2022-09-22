@@ -61,7 +61,7 @@ module Honeysearch
     def splitdata
       @splitdata ||= begin
         res = []
-        @rawdata.scan(%r{<li>(?<text>[^<]+)</li>}) do |x|
+        @rawdata.scan(%r{<li>(?<text>.+?)</li>}) do |x|
           res << x.first
         end
         res
